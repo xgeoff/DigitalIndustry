@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Digital Industry | Enterprise Software & Consulting</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+      integrity="sha512-bOG4NXD5Fcv7psG94Tad+kbfEJkZAIgnNhBdDUBcXsv4yggFF7LU71LhxEbI7qF1C9FZo8GQYk17glJKqJrl0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      :root {
+        --electric-blue: #00b3ff;
+        --white: #f4f7ff;
+        --gray: #b0b6c8;
+        color-scheme: dark;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        background: #000;
+        color: var(--white);
+      }
+
+      .page {
+        min-height: 100vh;
+        background: #000;
+        padding: 3rem 1rem 2rem;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+      }
+
+      .tagline {
+        font-size: 1.1rem;
+        color: var(--gray);
+      }
+
+      .logo {
+        margin: 0;
+        font-size: 1.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        display: flex;
+        gap: 0.25rem;
+      }
+
+      .logo span {
+        display: inline-block;
+      }
+
+      .logo-digital {
+        color: var(--electric-blue);
+      }
+
+      .logo-industry {
+        color: var(--gray);
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--electric-blue);
+        color: var(--white);
+        padding: 0.75rem 1.5rem;
+        border-radius: 999px;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 179, 255, 0.35);
+      }
+
+      .hero h1 {
+        font-size: clamp(2.8rem, 5vw, 4rem);
+        margin-bottom: 0.5rem;
+      }
+
+      .hero p {
+        max-width: 640px;
+        line-height: 1.6;
+        color: var(--gray);
+      }
+
+      section.card {
+        background: rgba(15, 18, 28, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 18px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 20px 60px rgba(3, 7, 18, 0.6);
+        position: relative;
+        overflow: hidden;
+      }
+
+      section.card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at top right, rgba(0, 179, 255, 0.15), transparent 40%),
+          radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.04), transparent 35%);
+        pointer-events: none;
+      }
+
+      section.card > * {
+        position: relative;
+      }
+
+      .grid-gap {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        background: rgba(0, 179, 255, 0.18);
+        color: var(--electric-blue);
+        padding: 0.4rem 0.9rem;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .service {
+        background: rgba(4, 5, 12, 0.75);
+        border-radius: 14px;
+        padding: 1.1rem;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .service:hover {
+        border-color: rgba(0, 179, 255, 0.4);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(0, 179, 255, 0.15);
+      }
+
+      .service-head {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .service-icon {
+        width: 36px;
+        height: 36px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(0, 179, 255, 0.15);
+        flex-shrink: 0;
+      }
+
+      .service-icon svg {
+        width: 20px;
+        height: 20px;
+        stroke: var(--electric-blue);
+        fill: none;
+        stroke-width: 1.5;
+      }
+
+      .partner-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+      }
+
+      .partner-entry {
+        background: rgba(4, 5, 12, 0.75);
+        border-radius: 14px;
+        padding: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .partner-entry:hover {
+        border-color: rgba(0, 179, 255, 0.35);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 179, 255, 0.12);
+      }
+
+      .partner-icon {
+        width: 28px;
+        height: 28px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0.6rem;
+      }
+
+      .partner-icon svg {
+        width: 24px;
+        height: 24px;
+        stroke: var(--electric-blue);
+        fill: none;
+        stroke-width: 1.5;
+      }
+
+      .partner-entry h4 {
+        font-size: 1.1rem;
+        margin: 0;
+        color: var(--white);
+        display: flex;
+        align-items: center;
+      }
+
+      .partner-entry p {
+        margin: 0.4rem 0 0;
+        color: var(--gray);
+      }
+
+      .service h4,
+      .service p {
+        margin: 0;
+      }
+
+      .service h4 {
+        font-size: 1.2rem;
+        color: var(--white);
+      }
+
+      .service p {
+        color: var(--gray);
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 3rem;
+        color: var(--gray);
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 640px) {
+        header {
+          gap: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="container">
+        <header>
+          <div>
+            <h2 class="logo">
+              <span class="logo-digital">DIGITAL</span>
+              <span class="logo-industry">INDUSTRY</span>
+            </h2>
+          </div>
+          <button class="btn-primary" onclick="location.href='https://digitalindustry.biz'">
+            Visit the platform
+          </button>
+        </header>
+
+        <section class="card hero">
+          <span class="pill">Enterprise software & consulting</span>
+          <h1>Enterprise software, shaped by decades of platform experience</h1>
+          <p>
+            Digital Industry is a newly founded consultancy led by operators who have guided large platform
+            programs and Salesforce transformations in highly regulated markets. We pair that hands-on
+            experience with pragmatic architecture so the platforms we design are durable, maintainable, and
+            aligned with the way your business actually runs.
+          </p>
+        </section>
+
+        <section class="card">
+          <div class="pill">What we do</div>
+          <div class="grid-gap">
+            <article class="service">
+              <div class="service-head">
+                <span class="service-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 18h14M5 6h14M5 12h14" />
+                  </svg>
+                </span>
+                <h4>Enterprise Platforms</h4>
+              </div>
+              <p>
+                Design and evolve resilient platforms using patterns proven at scale and tailored to the
+                constraints of your team, data, and governance.
+              </p>
+            </article>
+            <article class="service">
+              <div class="service-head">
+                <span class="service-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l3 3-3 3M18 9l-3 3 3 3M12 12h-3m6 0h3" />
+                  </svg>
+                </span>
+                <h4>Salesforce & CRM</h4>
+              </div>
+              <p>
+                Architect and configure Salesforce ecosystems with operating models that reflect complex
+                compliance, revenue, and experience goals.
+              </p>
+            </article>
+            <article class="service">
+              <div class="service-head">
+                <span class="service-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="3" />
+                    <path d="M9 11c0 2 1 4 3 4s3-2 3-4" />
+                    <path d="M6 19h12" />
+                  </svg>
+                </span>
+                <h4>Consulting & Strategy</h4>
+              </div>
+              <p>
+                Translate operator insights into clear roadmaps, governance touchpoints, and technology
+                blueprints that keep your teams aligned without overpromising.
+              </p>
+            </article>
+            <article class="service">
+              <div class="service-head">
+                <span class="service-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8 6l8 6-8 6" />
+                  </svg>
+                </span>
+                <h4>Software Engineering</h4>
+              </div>
+              <p>
+                Apply modern engineering discipline, observability, and continuous delivery in a way that
+                respects the ecosystem you already run.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="pill">How we partner</div>
+          <div class="partner-grid">
+            <article class="partner-entry">
+              <h4>
+                <span class="partner-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 4v16M4 12h16" />
+                  </svg>
+                </span>
+                Discovery & Alignment
+              </h4>
+              <p>
+                We listen to your operating constraints, surface the most material risks, and translate them
+                into the technical guardrails you need before writing a single line.
+              </p>
+            </article>
+            <article class="partner-entry">
+              <h4>
+                <span class="partner-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M5 7h14M5 17h14" />
+                  </svg>
+                </span>
+                Delivery with Transparency
+              </h4>
+              <p>
+                Small, disciplined teams build iteratively, sharing working software and decision logbooks so
+                leadership understands how tradeoffs were made.
+              </p>
+            </article>
+            <article class="partner-entry">
+              <h4>
+                <span class="partner-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 19h12" />
+                    <path d="M12 5v5" />
+                    <path d="M9 12h6" />
+                  </svg>
+                </span>
+                Scale & Evolution
+              </h4>
+              <p>
+                We help you mature governance, observability, and platform ownership over time so the system
+                you launch stays healthy long after go-live.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="card">
+          <div>
+            <span class="pill">How we think</span>
+            <h3>Durable platforms require clear tradeoffs</h3>
+            <p>
+              We draw lessons from long-term, high-compliance deliveries—focusing on maintainability, clarity,
+              and operational fit rather than headline wins. Every decision is graded by how it impacts the
+              teams who will operate the platform five years in.
+            </p>
+          </div>
+        </section>
+
+        <section class="card">
+          <h4>Ready when you are</h4>
+          <p>
+            If you’re looking for pragmatic leadership on your next enterprise platform or Salesforce initiative,
+            reach out and we’ll start a conversation about the right next move.
+          </p>
+          <button class="btn-primary" onclick="location.href='mailto:hello@digitalindustry.biz'">
+            Start a conversation
+          </button>
+        </section>
+
+        <footer>
+          digitalindustry.biz | Enterprise software consulting, built on real platform experience
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

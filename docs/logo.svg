@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120" role="img" aria-label="Digital Industry wordmark">
+  <text
+    x="0"
+    y="80"
+    font-family="'Manrope', 'Helvetica Neue', Arial, sans-serif"
+    font-size="64"
+    font-weight="600"
+    letter-spacing="0.2em"
+    text-transform="uppercase"
+  >
+    <tspan fill="#5c7cfa">DIGITAL</tspan>
+    <tspan dx="32" dy="0" fill="#b0b6c8">INDUSTRY</tspan>
+  </text>
+</svg>
